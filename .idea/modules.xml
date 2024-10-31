@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/desafios/BancoDigitalPOO/BancoDigitalPOO.iml" filepath="$PROJECT_DIR$/desafios/BancoDigitalPOO/BancoDigitalPOO.iml" />
       <module fileurl="file://$PROJECT_DIR$/desafios/DesafioControleFluxo/DesafioControleFluxo.iml" filepath="$PROJECT_DIR$/desafios/DesafioControleFluxo/DesafioControleFluxo.iml" />
       <module fileurl="file://$PROJECT_DIR$/desafios/POO-Iphone-UML/POO-Iphone-UML.iml" filepath="$PROJECT_DIR$/desafios/POO-Iphone-UML/POO-Iphone-UML.iml" />
       <module fileurl="file://$PROJECT_DIR$/desafios/conta-banco/conta-banco.iml" filepath="$PROJECT_DIR$/desafios/conta-banco/conta-banco.iml" />
