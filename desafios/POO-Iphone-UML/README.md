@@ -21,6 +21,47 @@ Abaixo está a representação UML da estrutura de classes e interfaces do proje
 
 ![Diagrama UML](images/uml-diagram.png)
 
+<details>
+<summary>Clique aqui para ver e copiar o código do diagrama</summary>
+
+```mermaid
+classDiagram
+    class Iphone {
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
+
+    class ReprodutorMusical {
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
+    }
+
+    class AparelhoTelefonico {
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
+    }
+
+    class NavegadorInternet {
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
+
+    Iphone ..|> ReprodutorMusical
+    Iphone ..|> AparelhoTelefonico
+    Iphone ..|> NavegadorInternet
+```
+</details>
+
 ## Estrutura do Projeto
 
 O projeto está organizado em pacotes, seguindo as boas práticas de organização de código em Java:
