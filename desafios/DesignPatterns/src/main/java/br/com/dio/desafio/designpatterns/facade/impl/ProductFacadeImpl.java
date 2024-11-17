@@ -2,6 +2,7 @@ package br.com.dio.desafio.designpatterns.facade.impl;
 
 import br.com.dio.desafio.designpatterns.domain.entity.Product;
 import br.com.dio.desafio.designpatterns.service.ProductService;
+import br.com.dio.desafio.designpatterns.shared.utils.ValidationUtils;
 import br.com.dio.desafio.designpatterns.singleton.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -43,11 +44,7 @@ public class ProductFacadeImpl implements br.com.dio.desafio.designpatterns.faca
     }
 
     private void validateProduct(Product product) {
-        if (product.getPrice() <= 0) {
-            throw new IllegalArgumentException("O preço do produto deve ser maior que zero.");
-        }
-        if (product.getName() == null || product.getName().isEmpty()) {
-            throw new IllegalArgumentException("O nome do produto é obrigatório.");
-        }
+        ValidationUtils.validatePrice(product.getPrice());
+        ValidationUtils.validateName(product.getName());
     }
 }

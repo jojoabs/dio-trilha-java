@@ -3,6 +3,7 @@ package br.com.dio.desafio.designpatterns.service.impl;
 import br.com.dio.desafio.designpatterns.domain.entity.Product;
 import br.com.dio.desafio.designpatterns.repository.ProductRepository;
 import br.com.dio.desafio.designpatterns.service.ProductService;
+import br.com.dio.desafio.designpatterns.shared.exceptions.ResourceNotFoundException;
 import br.com.dio.desafio.designpatterns.singleton.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
             product.setPrice(productDetails.getPrice());
             logManager.log("Atualizando produto ID: " + id);
             return productRepository.save(product);
-        }).orElseThrow(() -> new RuntimeException("Produto não encontrado!"));
+        }).orElseThrow(() -> new ResourceNotFoundException("Produto com ID " + id + " não encontrado!"));
     }
 
     @Override
@@ -45,7 +46,7 @@ public class ProductServiceImpl implements ProductService {
             productRepository.delete(product);
             logManager.log("Deletando produto ID: " + id);
         }, () -> {
-            throw new RuntimeException("Produto não encontrado!");
+            throw new ResourceNotFoundException("Produto com ID " + id + " não encontrado!");
         });
     }
 }
